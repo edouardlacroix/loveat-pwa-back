@@ -16,6 +16,9 @@
     },
     "ingredients": {
       "collection": "ingredients"
+    },
+    "options": {
+      "collection": "options"
     }
   }
 }

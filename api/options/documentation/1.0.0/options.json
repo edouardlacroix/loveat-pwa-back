@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/meals": {
+    "/options": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the options's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve options document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Meal"
+                    "$ref": "#/components/schemas/Options"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Options"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new options record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve options document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Meal"
+                  "$ref": "#/components/schemas/Options"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Options"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMeal"
+                "$ref": "#/components/schemas/NewOptions"
               }
             }
           }
         }
       }
     },
-    "/meals/count": {
+    "/options/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of options documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve options document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Options"
         ],
         "parameters": []
       }
     },
-    "/meals/{id}": {
+    "/options/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one options record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve options document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Meal"
+                  "$ref": "#/components/schemas/Options"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Options"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single options record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve options document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Meal"
+                  "$ref": "#/components/schemas/Options"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Options"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMeal"
+                "$ref": "#/components/schemas/NewOptions"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single options record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single options based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Options"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Meal": {
+      "Options": {
         "required": [
           "id"
         ],
@@ -525,71 +525,20 @@
           "name": {
             "type": "string"
           },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
-          },
-          "options": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "published_at": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           }
         }
       },
-      "NewMeal": {
+      "NewOptions": {
         "properties": {
           "name": {
             "type": "string"
           },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
-          },
-          "options": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
+          "published_at": {
+            "type": "string",
+            "format": "date-time"
           },
           "created_by": {
             "type": "string"
@@ -603,7 +552,7 @@
   },
   "tags": [
     {
-      "name": "Meal"
+      "name": "Options"
     }
   ]
 }
