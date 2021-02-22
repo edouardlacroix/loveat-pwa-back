@@ -1,9 +1,8 @@
 {
   "kind": "collectionType",
-  "collectionName": "meals",
+  "collectionName": "ingredients",
   "info": {
-    "name": "Meal",
-    "description": ""
+    "name": "Ingredients"
   },
   "options": {
     "increments": true,
@@ -13,9 +12,6 @@
   "attributes": {
     "name": {
       "type": "string"
-    },
-    "ingredients": {
-      "collection": "ingredients"
     }
   }
 }

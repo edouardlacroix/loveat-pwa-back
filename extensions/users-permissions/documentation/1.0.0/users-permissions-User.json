@@ -1261,11 +1261,14 @@
                 "id": {
                   "type": "string"
                 },
-                "mealName": {
+                "name": {
                   "type": "string"
                 },
-                "published_at": {
-                  "type": "string"
+                "ingredients": {
+                  "type": "array",
+                  "items": {
+                    "type": "string"
+                  }
                 },
                 "created_by": {
                   "type": "string"

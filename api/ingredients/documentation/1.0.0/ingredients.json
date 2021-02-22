@@ -1,18 +1,18 @@
 {
   "paths": {
-    "/meals": {
+    "/ingredients": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find all the ingredients's records",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
                   "type": "array",
                   "items": {
-                    "$ref": "#/components/schemas/Meal"
+                    "$ref": "#/components/schemas/Ingredients"
                   }
                 }
               }
@@ -51,7 +51,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Ingredients"
         ],
         "parameters": [
           {
@@ -194,14 +194,14 @@
       },
       "post": {
         "deprecated": false,
-        "description": "Create a new record",
+        "description": "Create a new ingredients record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Meal"
+                  "$ref": "#/components/schemas/Ingredients"
                 }
               }
             }
@@ -239,7 +239,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Ingredients"
         ],
         "requestBody": {
           "description": "",
@@ -247,20 +247,20 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMeal"
+                "$ref": "#/components/schemas/NewIngredients"
               }
             }
           }
         }
       }
     },
-    "/meals/count": {
+    "/ingredients/count": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Retrieve the numver of ingredients documents",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
@@ -306,22 +306,22 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Ingredients"
         ],
         "parameters": []
       }
     },
-    "/meals/{id}": {
+    "/ingredients/{id}": {
       "get": {
         "deprecated": false,
-        "description": "",
+        "description": "Find one ingredients record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Meal"
+                  "$ref": "#/components/schemas/Ingredients"
                 }
               }
             }
@@ -359,7 +359,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Ingredients"
         ],
         "parameters": [
           {
@@ -376,14 +376,14 @@
       },
       "put": {
         "deprecated": false,
-        "description": "Update a record",
+        "description": "Update a single ingredients record",
         "responses": {
           "200": {
-            "description": "response",
+            "description": "Retrieve ingredients document(s)",
             "content": {
               "application/json": {
                 "schema": {
-                  "$ref": "#/components/schemas/Meal"
+                  "$ref": "#/components/schemas/Ingredients"
                 }
               }
             }
@@ -421,7 +421,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Ingredients"
         ],
         "requestBody": {
           "description": "",
@@ -429,7 +429,7 @@
           "content": {
             "application/json": {
               "schema": {
-                "$ref": "#/components/schemas/NewMeal"
+                "$ref": "#/components/schemas/NewIngredients"
               }
             }
           }
@@ -449,10 +449,10 @@
       },
       "delete": {
         "deprecated": false,
-        "description": "Delete a record",
+        "description": "Delete a single ingredients record",
         "responses": {
           "200": {
-            "description": "deletes a single record based on the ID supplied",
+            "description": "deletes a single ingredients based on the ID supplied",
             "content": {
               "application/json": {
                 "schema": {
@@ -495,7 +495,7 @@
         },
         "summary": "",
         "tags": [
-          "Meal"
+          "Ingredients"
         ],
         "parameters": [
           {
@@ -514,7 +514,7 @@
   },
   "components": {
     "schemas": {
-      "Meal": {
+      "Ingredients": {
         "required": [
           "id"
         ],
@@ -524,41 +524,13 @@
           },
           "name": {
             "type": "string"
-          },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "required": [
-                "id"
-              ],
-              "properties": {
-                "id": {
-                  "type": "string"
-                },
-                "name": {
-                  "type": "string"
-                },
-                "created_by": {
-                  "type": "string"
-                },
-                "updated_by": {
-                  "type": "string"
-                }
-              }
-            }
           }
         }
       },
-      "NewMeal": {
+      "NewIngredients": {
         "properties": {
           "name": {
             "type": "string"
-          },
-          "ingredients": {
-            "type": "array",
-            "items": {
-              "type": "string"
-            }
           },
           "created_by": {
             "type": "string"
@@ -572,7 +544,7 @@
   },
   "tags": [
     {
-      "name": "Meal"
+      "name": "Ingredients"
     }
   ]
 }
